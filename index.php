@@ -1,9 +1,13 @@
 <?php
     include('./classes/Student.php');
+    include('./classes/Toolbox.php');
+
+    use KdG\Student;
+    use KdG\Toolbox;
 
     // Hier moet je dan de namepsace bijzetten
-    $joske = new KdG\Student;
+    $joske = new Student;
     $joske->setName('Joske Vermeulen');
     $joske->setEmail('joske@tramazantlei.be');
 
-    echo $joske->printDetails();
+    echo Toolbox::bold($joske->printDetails());

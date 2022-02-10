@@ -4,8 +4,8 @@ namespace KdG;
 
 Class Toolbox
 {
-    public static function setBold(string $string): string
+    public static function bold(string $string): string
     {
-        echo '<br />';
+        return "<strong>{$string}</strong>";
     }
 }
