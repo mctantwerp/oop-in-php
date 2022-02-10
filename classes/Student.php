@@ -8,13 +8,13 @@ Class Student
     private string $name;
     private string $email;
 
-    public function setName($name)
+    public function setName(string $name): string
     {
         $this->name = $name;
     }
 
     // Door via methods te gaan kunnen we onze input gaan valideren of bewerken
-    public function setEmail($email)
+    public function setEmail(string $email): string
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             die("Invalid email format");
