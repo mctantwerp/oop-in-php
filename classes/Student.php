@@ -5,8 +5,22 @@ namespace KdG;
 
 Class Student
 {
-    public string $name;
-    public string $email;
+    private string $name;
+    private string $email;
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // Door via methods te gaan kunnen we onze input gaan valideren of bewerken
+    public function setEmail($email)
+    {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            die("Invalid email format");
+        }
+        $this->email = $email;
+    }
 
     public function printDetails():string
     {
