@@ -1,5 +1,8 @@
 <?php
 
+// Via het definiëren van een namespace kan je voorkomen dat classes met dezelfde naam gaan "clashen"
+namespace KdG;
+
 Class Student
 {
     public string $name;

@@ -1,8 +1,10 @@
 <?php
     include('./classes/Student.php');
 
-    // Hier moet je dan de namepsace bijzetten
-    $joske = new KdG\Student;
+    // Een andere manier om aan uw app duidelijk te maken uit welke namespace je Student wil gebruiken
+    use KdG\Student;
+
+    $joske = new Student;
     $joske->name = 'Joske Vermeulen';
     $joske->email = 'joske@tramazantlei.be';
 
