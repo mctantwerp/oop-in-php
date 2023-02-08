@@ -1,5 +1,5 @@
 <?php
-    include('./includes/autoloader.php');
+    include('./vendor/autoload.php');
 
     use KdG\Student;
     use KdG\Toolbox;

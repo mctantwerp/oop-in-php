@@ -1,0 +1,16 @@
+{
+    "name": "kdg/oop-in-php",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "KdG\\": "classes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sam Serrien",
+            "email": "sam.serrien@kdg.be"
+        }
+    ],
+    "require": {}
+}
