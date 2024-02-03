@@ -28,7 +28,7 @@ Class Student
     {
         if(empty($this->name))
         {
-            $this->name = StaticCache::getInstance()->get('name');
+            $this->name = StaticCache::get('name');
         }
         return "{$this->name} ($this->email)";
     }

@@ -21,17 +21,27 @@ class StaticCache
         return self::$instance;
     }
 
-    public function set($key, $value)
+    private function set($key, $value)
     {
         $this->cache[$key] = $value;
     }
 
-    public function get($key)
+    private function get($key)
     {
         if (array_key_exists($key, $this->cache)) {
             return $this->cache[$key];
         }
 
         return null;
+    }
+
+    /**
+     * For easy access
+     */
+    public static function __callStatic($chrMethod, $arrArguments)
+    {
+        $instance = self::getInstance();
+
+        return call_user_func_array(array($instance, $chrMethod), $arrArguments);
     }
 }
