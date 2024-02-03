@@ -3,6 +3,8 @@
 // Via het definiëren van een namespace kan je voorkomen dat classes met dezelfde naam gaan "clashen"
 namespace KdG;
 
+use KdG\StaticCache;
+
 Class Student
 {
     private string $name;
@@ -24,6 +26,10 @@ Class Student
 
     public function printDetails():string
     {
+        if(empty($this->name))
+        {
+            $this->name = StaticCache::getInstance()->get('name');
+        }
         return "{$this->name} ($this->email)";
     }
 }

@@ -3,10 +3,11 @@
 
     use KdG\Student;
     use KdG\Toolbox;
+    use KdG\StaticCache;
 
-    // Hier moet je dan de namepsace bijzetten
+    StaticCache::getInstance()->set('name', 'Sam Serrien');
+
     $joske = new Student;
-    $joske->setName('Joske Vermeulen');
     $joske->setEmail('joske@tramazantlei.be');
 
     echo Toolbox::bold($joske->printDetails());
