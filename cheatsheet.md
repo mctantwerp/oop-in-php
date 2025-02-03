@@ -49,6 +49,8 @@ use KdG\Student;
 
 ## Setters en getters (ex3)
 
+### Old way
+
 ```php
 private string $name;
 private string $email;
@@ -66,6 +68,46 @@ public function setEmail(string $email): string
     }
     $this->email = $email;
 }
+```
+
+### New way - Property Hooks (PHP 8.4)
+
+```php
+class User
+{
+    /*
+     * Get en Set methodes worden meteen in de declaratie van de property gezet
+     */
+    public string $email {
+        set (string $value) {
+            if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                throw new InvalidArgumentException(
+                    'Invalid email address'
+                );
+            }
+
+            $this->email = $value;
+        }
+    }
+}
+```
+
+```php
+class User
+{
+    public function __construct(
+        public string $firstName, public string $lastName
+    ) {}
+
+    public string $fullName {
+        get {
+            return $this->firstName . " " . $this->lastName;
+        }
+    }
+}
+
+$user = new User('John', 'Doe');
+echo $user->fullName; // John Doe
 ```
 
 ## Static classes (ex4)
